@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    height: 100%;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background: #000000;
+    left: -200px;
+    transition: 0.2s;
+    z-index: 1000;
+}
+
+.sidebar.active{
+    left: 0;
+}
+
+.sidebar ul {
+    bottom: 200px;
+}
+.sidebar ul li{
+    list-style: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 20px 24px;
+}
+
+.sidebar ul li button {
+    border-style: none;
+    color: #fff;
+    font-size: 20px;
+    background: #000000;
+}
+
+.sidebar ul li:hover button {
+    color: #03a9f4;
+}
+
+.sidebar ul li:hover{
+    color: #03a9f4;
+}
+
+.sidebar .toggle-btn{
+    position: absolute;
+    top: 30px;
+    left: 230px;
+    font-size: 20px;
+}
+
+.sidebar2 {
+    position: fixed;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #000000;
+    left: -250px;
+    transition: 0.2s;
+    z-index: 1000;
+    /* overflow-y: scroll; */
+}
+
+.sidebar2 .toggle-btn {
+    position: absolute;
+    top: 30px;
+    left: 255px;
+    font-size: 20px;
+}
+
+.sidebar2 ul li{
+    list-style: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 20px 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar2 ul li:hover{
+    color: #03a9f4;
+}
+
+.sidebar2 ul li input {
+    appearance: none;
+    position: absolute;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    display: grid;
+    place-content: center;
+}
+
+.sidebar2 ul li input::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    transform: scale(0);
+    transition: 30ms transform ease-in-out;
+    background-color: #03a9f4;
+}
+
+.sidebar2 ul li input:checked::before {
+    transform: scale(1);
+} 
+
+.sidebar2 ul li label {
+    position: relative;
+    cursor: pointer;
+    right: -20%;
+}
+
+
+.sidebar2.active {
+    left: 0;
+    z-index: 1000;
+}
+
+.help {
+    position: absolute;
+    top: 20px;
+    right: 100px;
+}
+
+#help_button {
+    height: 30px;
+    width: 60px;
+    font-size: 15px;
+    background-color: #03a9f4;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.show {
+    display: none;
+}

@@ -1,0 +1,6 @@
+let languageInputs = document.querySelectorAll(".contactInfo.language span")
+let skillInputs = document.querySelectorAll(".skills .box span")
+let hobbyInputs = document.querySelectorAll(".hobbies .hobby")
+console.log(languageInputs)
+console.log(skillInputs)
+console.log(hobbyInputs)

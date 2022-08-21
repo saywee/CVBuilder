@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/neutral.css">
+    <script type="text/javascript" src="js/sidebars.js" defer></script>
+</head>
+<body class="body">
+    <div class="sidebar">
+        <div class="toggle-btn" onclick="showAndHide(this)"><i class="fa-solid fa-bars"></i></div>
+        <ul>
+            <li>Layout</li>
+            <li onclick="showSocials()">Social Media</li>
+            <li><button class="print">Print</button></li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="sidebar2">
+        <div class="socials">
+            <ul>
+                <li><input type="checkbox" name="email" id="email"><label for="email">Email</label></li>
+                <li><input type="checkbox" name="phone" id="phone"><label for="phone">Contact No.</label></li>
+                <li><input type="checkbox" name="address" id="address"><label for="address">Address</label></li>
+                <li><input type="checkbox" name="instagram" id="instagram"><label for="instagram">Instagram</label></li>
+                <li><input type="checkbox" name="github" id="github"><label for="github">Github</label></li>
+                <li><input type="checkbox" name="linkedin" id="linkedin"><label for="linkedin">Linkedin</label></li>
+                <li><input type="checkbox" name="facebook" id="facebook"><label for="facebook">Facebook</label></li>
+                <li onclick="moveBack()">Back</li>
+                <!-- <li onclick="showAndHide(this)">Close</li> -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="left_side">
+            <div class="profileText">
+                <!-- <div class="imgBx">
+                    <img src="pspt_photo.jpg">
+                </div> -->
+                <div class="profile">
+                    <span class="name" contenteditable></span>
+                    <span class="career" contenteditable></span>
+                    <!-- <input type="text" class="name" placeholder="Name"> -->
+                    <!-- <input type="text" class="career" placeholder="Career"> -->
+                </div>
+            </div>
+                <div class="contactInfo">
+                    <h3 class="title">Contact Info</h3>
+                    <ul>
+                        <li>
+                            <div id="forcontact" class="contacts">
+                                <span class="icon"><i class="fa-solid fa-mobile-screen"></i></span>
+                                <!-- <input class="text" placeholder="Contact Number"> -->
+                                <span class="contact" contenteditable="true"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div id="foremail" class="contacts">
+                                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                                <span class="email" contenteditable="true"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div id="foraddress" class="contacts">
+                                <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                                <!-- <input class="text" placeholder="Address"> -->
+                                <span class="address" contenteditable="true"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div id="forlinkedin" class="contacts">
+                                <span class="icon"><i class="fa-brands fa-linkedin"></i></span>
+                                <!-- <input class="text" id="forlinkedin" placeholder="linkedin.com/in/"> -->
+                                <span class="linkedin" contenteditable="true"></span>
+                            </div>
+                        </li>
+                        <li> 
+                            <div id="forgithub" class="contacts">
+                                <span class="icon"><i class="fa-brands fa-github"></i></span>
+                                <!-- <input class="text" placeholder="github.com/"> -->
+                                <span class="github" contenteditable="true"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div id="forinstagram" class="contacts">
+                                <span class="icon"><i class="fa-brands fa-instagram"></i></span>
+                                <!-- <input class="text" id="forinstagram" placeholder="Instagram"> -->
+                                <span class="instagram" contenteditable="true"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contactInfo education" onmouseenter="showButton()" onmouseleave="showButton()">
+                    <h3 class="title">Education</h3>
+                    <ul>
+                        <li>
+                            <div class="duration" onmouseenter="showPresentCheckBox(this)" onmouseleave="showPresentCheckBox(this)">
+                                <input type="text" class="date" maxlength="2" placeholder="mm" oninput="restrictNumber(this)"/>
+                                <span>/ </span>
+                                <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
+                                <span>- </span>
+                                <span class="present">
+                                    <input type="text" class="date" maxlength="2" placeholder="mm" oninput="restrictNumber(this)"/>
+                                    <span>/ </span>
+                                    <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
+                                </span>
+                                <div class="forpresentcheckbox hide">
+                                    <input type="checkbox" name="isPresent" id="isPresent" onclick="isCheck(this)">Present
+                                </div>   
+                            </div>
+                            <span class="course" contenteditable="true"></span>
+                            <br>
+                            <span class="university" contenteditable="true"></span>
+                            <br>
+                            <span class="country" contenteditable="true"></span>
+                        </li>
+                    </ul>
+                    <div class="add_education_button hide">
+                        <button class="add_education" onclick="addEducation()">+</button>
+                    </div>
+                </div>
+
+                <div class="contactInfo language">
+                    <h3 class="title">Language</h3>
+                    <ul>
+                        <li>
+                            <span contenteditable="true" class="language"></span>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        <div class="right_side">
+            <div class="about">
+                <h2 class="title2">Profile</h2>
+                <textarea class="about_yourself" rows="1"></textarea>
+            </div>
+            <div class="about work" onmouseenter="showWorkButton()" onmouseleave="showWorkButton()">
+                <h2 class="title2">Work Experience</h2>
+                <div class="workBox box">
+                    <div class="year_company">
+                        <div class="duration" >
+                            <input type="text" class="date" maxlength="2" placeholder="mm" oninput="restrictNumber(this)"/>
+                            <span>/ </span>
+                            <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
+                            <span>- </span>
+                            <span class="present">
+                                <input type="text" class="date" maxlength="2" placeholder="mm" oninput="restrictNumber(this)"/>
+                                <span>/ </span>
+                                <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
+                            </span>
+                            <div class="forpresentcheckbox hide">
+                                <input type="checkbox" name="isPresent" id="isPresent" onclick="isCheck(this)">Present
+                            </div>   
+                        </div>
+                        <div class="company">
+                            <span contenteditable="true"></span>
+                        </div>
+                        <div class="country">
+                            <span contenteditable="true"></span>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h4>Role</h4>
+                        <ul>
+                            <li>
+                                <textarea rows="1" onfocus="addTextArea(this)" onfocusout="checkInputLength(this)"></textarea>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="add_work hide">
+                    <button class="add_work_button" onclick="addWork()">+</button>
+                </div>
+            </div>
+            <div class="about skills">
+                <h2 class="title2">Skills</h2>
+                <div class="box">
+                    <span class="skill" contenteditable="true"></span>
+                    <span class="skill" contenteditable="true"></span>
+                    <span class="skill" contenteditable="true"></span>
+                </div>
+            </div>
+            <div class="about hobbies">
+                <h2 class="title2">Hobby</h2>
+                <div class="box">
+                    <span class="hobby" contenteditable="true"></span>
+                    <span class="hobby" contenteditable="true"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="help">
+        <button id="help_button">Help</button>
+    </div>
+
+    <script type="text/javascript" src="js/education.js"></script>
+    <script type="text/javascript" src="js/work.js"></script>
+    <script type="text/javascript" src="js/otherInputs.js"></script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    background: rgb(58, 58, 59);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    min-height: 900px;
+    margin: 20px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+}
+
+.container .left_side{
+    position: relative;
+    background-color:#003147;
+    padding: 20px;
+}
+
+.profileText .profile{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 2555, 255, 0.2);   
+}
+
+.profileText span {
+    border-style: hidden;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.3em;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+
+.profileText .career {
+    font-size: 0.8em;
+    font-weight: 300;
+}
+
+span[contenteditable] {
+    display: inline-block;
+}
+
+span[contenteditable].name:empty::before{
+    content: 'Name';
+}
+
+span[contenteditable].career:empty::before{
+    content: 'Career';
+}
+
+.contactInfo {
+    padding-top: 20px;
+}
+
+.title {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.contactInfo ul {
+    position: relative;
+
+}
+
+.contactInfo ul li {
+    position: relative;
+    list-style: none;
+    margin: 10px 0;
+}
+
+.contactInfo ul li .contacts {
+    display: flex;
+}
+
+.contactInfo ul li .icon {
+    display: inline-block;
+    width: 30px;
+    font-size: 18px;
+    color: #03a9f4;
+    
+}
+.contactInfo ul li span {
+    color: #fff;
+    font-weight: 300;
+    width: 210px;
+}
+
+span[contenteditable].contact:empty::before {
+    content: "Contact Number";
+}
+
+span[contenteditable].address:empty::before {
+    content: "Address";
+}
+
+span[contenteditable].email:empty::before {
+    content: "Email";
+}
+
+span[contenteditable].github:empty::before {
+    content: "github.com/";
+}
+
+span[contenteditable].linkedin:empty::before {
+    content: "linkedin.com/";
+}
+
+span[contenteditable].instagram:empty::before {
+    content: "Instagram";
+}
+
+.hide {
+    display: none;
+}
+
+.contactInfo ul li input {
+    border-style: hidden;
+    background-color: transparent;
+    
+}
+
+.contactInfo.education li {
+    margin-bottom: 15px;
+}
+
+.contactInfo.education input.date {
+    color: #03a9f4;
+    font-weight: 500;
+    width: 25px;
+    font-size: 14px;
+}
+
+.contactInfo.education input.date:not(:empty) {
+    width: 20px;
+}
+
+.contactInfo.education input.year {
+    color: #03a9f4;
+    font-weight: 500;
+    width: 30px;
+    font-size: 14px;
+}
+
+.contactInfo.education ul li span {
+    color: #03a9f4;
+    font-weight: 500;
+    left: 30px;
+}
+
+.contactInfo.education ul li .forpresentcheckbox {
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+
+.contactInfo.education span.course {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.15em;
+}
+
+.contactInfo.education span.course:empty::before {
+    content: "Course";
+}
+
+.contactInfo.education span.university {
+    color: #fff;
+    font-weight: 300;
+}
+
+.contactInfo.education span.university:empty::before {
+    content: "University";
+}
+
+.contactInfo.education span.country {
+    color: #03a9f4;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.contactInfo.education span.country:empty::before {
+    content: "Country";
+}
+
+.contactInfo.language ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contactInfo.language span {
+    display: inline-block;
+    border-bottom-style: dashed;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.05em;
+    width: 100px;
+}
+
+.contactInfo.language span:empty::before {
+    content: "Language";
+}
+
+.container .right_side{
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.about {
+    margin-bottom: 20px;
+}
+
+textarea{
+    width: 100%;
+    border: #333 dashed;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    resize: none;
+}
+
+.filled {
+    border-bottom-style: none;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.about:last-child {
+    margin-bottom: 0;
+}
+
+.title2 {
+    color: #003147;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.4em;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #333;
+}
+
+.about .box {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+.about .workBox {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+
+.about .year_company {
+    max-width: 150px;
+}
+
+.about .year_company input.date {
+    font-weight: 600;
+    width: 20px;
+    font-size: 12px;
+    border-style: none;
+}
+.about .year_company input.year {
+    font-weight: 600;
+    width: 30px;
+    font-size: 12px;
+    border-style: none;
+}
+
+.about .year_company .company span{
+    font-weight: 600;
+}
+
+.about .year_company .company span:empty::before{
+    content: "Company";
+}
+
+.about .year_company .country span {
+    color: #848c90;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.about .year_company .country span:empty::before{
+    content: "Country"
+}
+
+.about .text h4 {
+    color: #2a7da2;
+    font-size: 16px;
+}
+
+.about .text ul {
+    padding-left: 20px;
+}
+
+.about .text ul li{
+    padding-left: 5px;
+    padding-bottom: 15px;
+    list-style-type: '-';
+    
+}
+
+.about .text ul li textarea {
+    vertical-align: top;
+    width: 220px;
+}
+
+.skills .box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.skills .box span{
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    border-bottom-style: dashed;
+    width: fit-content;
+    margin-right: 10px;
+}
+
+.skills .box span:empty::before {
+    content: "Skill";
+}
+
+.skills .box span.filled {
+    border-style: solid;
+    border-radius: 5px;
+    background-color:#003147 ;
+    color: #fff;
+    padding: 5px;
+}
+
+.hobbies .hobby{
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    border-bottom-style: dashed;
+    width: fit-content;
+    margin-bottom: 5px;
+}
+
+.hobbies .box {
+    display: flex;
+    flex-direction: column;
+}
+
+.hobbies .hobby:empty::before {
+    content: "Hobby";
+}
+
+.hobbies .hobby.filled {
+    border-bottom-style: none;
+}
+
+button:not(.sidebar .print){
+    background-color: #03a9f4;
+    border-style: none;
+    width: 30px;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: 5px;
+    border-radius: 5px;
+}
+@media print {
+    button {
+        display: none;
+    }
+
+    .container .left_side{
+        background-color: #003147 !important; 
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
+ 
