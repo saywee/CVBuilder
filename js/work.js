@@ -14,23 +14,26 @@ function checkInputLength(ele) {
 }
 
 function addTextArea(ele){
-    console.log(ele)
-    let currentBox = ele.closest("div").parentElement.classList[0]
+    let currentBox = ele.closest("div").parentElement
+    let currentBoxClass = currentBox.classList[0]
     ele.addEventListener("keydown", (e) => {
-        let ul = document.querySelector(`.${currentBox} .text ul`)
+        let ul = document.querySelector(`.${currentBoxClass} .text ul`)
         if(e.key == "Enter"){
             e.preventDefault()
             let li = document.createElement("li")
             li.innerHTML = `<textarea rows="1" onfocus="addTextArea(this)" onfocusout="checkInputLength(this)"></textarea>`
             ul.insertAdjacentElement("beforeend", li)
+            ul.lastElementChild.lastChild.focus()
         }else if(e.key === "Backspace"){
-            if(ele.value.length === 0 && document.querySelectorAll(`.${currentBox} .text ul li`).length > 1) {
+            if(ele.value.length === 0 && document.querySelectorAll(`.${currentBoxClass} .text ul li`).length > 1) {
                 ul.removeChild(ul.lastElementChild)
+                ul.lastElementChild.children[0].focus()
+
             }
         }
     })
 
-    ele.addEventListener("input", (e) => {
+    ele.addEventListener("input", () => {
         ele.style.height = "auto";
         ele.style.height = ele.scrollHeight + "px";
     })

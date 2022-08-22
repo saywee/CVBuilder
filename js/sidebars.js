@@ -33,26 +33,3 @@ btn.onclick = () => {
 // // github.classList.add("hide")
 // github.parentElement.classList.add("hide")
 // console.log(github.parentElement.classList)
-
-
-let skillTexts = document.querySelectorAll(".skill")
-skillTexts.forEach(skill => {
-    skill.addEventListener("focusout", () => {
-        if(skill.innerHTML.trim().length > 0) {
-            skill.classList.add("filled")   
-        }else{
-            skill.classList.remove("filled")
-        }
-    })
-})
-
-let hobbyTexts = document.querySelectorAll(".hobby")
-hobbyTexts.forEach(hobby => {
-    hobby.addEventListener("focusout", () => {
-        if(hobby.innerHTML.trim().length > 0) {
-            hobby.classList.add("filled")   
-        }else{
-            hobby.classList.remove("filled")
-        }
-    })
-})
