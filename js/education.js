@@ -62,7 +62,7 @@ function addEducation(){
         <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
     </span>
     <div class="forpresentcheckbox hide">
-    <input type="checkbox" name="isPresent" id="isPresent" onclick="isCheck(this)">Present
+    <input type="checkbox" name="isPresent${lis.length}" id="isPresent${lis.length}" onclick="isCheck(this)"><label for="isPresent${lis.length}">Present</label>
     </div>   
     </div>
     <span class="course" contenteditable="true"></span>

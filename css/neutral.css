@@ -67,8 +67,8 @@ span[contenteditable].career:empty::before{
     content: 'Career';
 }
 
-.contactInfo {
-    padding-top: 20px;
+.right_side .contactInfo {
+    padding-top: 0;
 }
 
 .title {
@@ -77,6 +77,15 @@ span[contenteditable].career:empty::before{
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 20px;
+}
+.right_side .title {
+    color: #003147;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.4em;
+    padding-top: 10px;
+    margin-bottom: 10px;
 }
 
 .contactInfo ul {
@@ -185,12 +194,23 @@ span[contenteditable].facebook:empty::before {
     font-size: 1.15em;
 }
 
+.right_side .contactInfo.education span.course {
+    color: #000;
+    font-weight: 600;
+    font-size: 1.15em;
+}
+
 .contactInfo.education span.course:empty::before {
     content: "Course";
 }
 
 .contactInfo.education span.university {
     color: #fff;
+    font-weight: 300;
+}
+
+.right_side .contactInfo.education span.university {
+    color: #000;
     font-weight: 300;
 }
 
@@ -217,6 +237,15 @@ span[contenteditable].facebook:empty::before {
     display: inline-block;
     border-bottom-style: dashed;
     color: #fff;
+    font-weight: 400;
+    font-size: 1.05em;
+    width: 100px;
+}
+
+.right_side .contactInfo.language span {
+    display: inline-block;
+    border-bottom-style: dashed;
+    color: #000;
     font-weight: 400;
     font-size: 1.05em;
     width: 100px;
@@ -269,6 +298,14 @@ textarea::-webkit-scrollbar {
     font-size: 1.4em;
     padding-top: 10px;
     margin-bottom: 10px;
+}
+
+.left_side .title2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
 
 p {
@@ -334,7 +371,7 @@ p {
 
 .about .text ul li{
     padding-left: 5px;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
     list-style-type: '-';
 }
 
@@ -364,6 +401,18 @@ p {
     margin-bottom: 10px;
 }
 
+.left_side .skills .box span{
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    color: #fff;
+    border-bottom-style: dashed;
+    width: fit-content;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
 .skills .box span:empty::before {
     content: "Skill";
 }
@@ -382,7 +431,15 @@ p {
     font-weight: 500;
     border-bottom-style: dashed;
     width: fit-content;
-    margin-bottom: 5px;
+}
+
+.left_side .hobbies .hobby{
+    display: block;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    border-bottom-style: dashed;
+    width: fit-content;
 }
 
 .hobbies .box ul{
@@ -393,8 +450,8 @@ p {
 
 .hobbies .box ul li{
     list-style-type: none;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    padding-right: 5px;
+    padding-bottom: 10px;
 }
 
 .hobbies .hobby:empty::before {

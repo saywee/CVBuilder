@@ -47,7 +47,7 @@ function addWork(){
     div.classList.add(`box`)
     div.innerHTML = `
     <div class="year_company">
-        <div class="duration" >
+        <div class="duration${totalBoxes.length}" >
             <input type="text" class="date" maxlength="2" placeholder="mm" oninput="restrictNumber(this)"/>
             <span>/ </span>
             <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
@@ -58,7 +58,7 @@ function addWork(){
                 <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
             </span>
             <div class="forpresentcheckbox hide">
-                <input type="checkbox" name="isPresent" id="isPresent" onclick="isCheck(this)">Present
+            <input type="checkbox" name="isWorkPresent${totalBoxes.length}" id="isWorkPresent${totalBoxes.length}" onclick="isCheck(this)"><label for="isWorkPresent${totalBoxes.length}">Present</label>
             </div>   
         </div>
         <div class="company">

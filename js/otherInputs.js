@@ -41,9 +41,8 @@ function addLanguage(ele){
             ul.lastElementChild.lastChild.focus()
         }else if(e.key === "Backspace"){
             if(ele.innerHTML.length === 0 && document.querySelectorAll(".language ul li").length > 1) {
-                
                 ul.removeChild(ul.lastElementChild)
-                console.log(document.querySelectorAll(".language ul li").length)
+                ul.lastElementChild.children[0].focus()
             }
         }
     })
@@ -60,7 +59,10 @@ function addSkill(ele){
             ul.insertAdjacentElement("beforeend", li)
             ul.lastElementChild.lastChild.focus()
         }else if(e.key === "Backspace"){
-            ul.removeChild(ul.lastElementChild)
+            if(ele.innerHTML.length == 0 && document.querySelectorAll(".skills .box ul li").length > 1){
+                ul.removeChild(ul.lastElementChild)
+                ul.lastElementChild.children[0].focus()
+            }
         }
     })
 }
@@ -75,7 +77,10 @@ function addHobby(ele){
             ul.insertAdjacentElement("beforeend", li)
             ul.lastElementChild.lastChild.focus()
         }else if(e.key === "Backspace"){
-            ul.removeChild(ul.lastElementChild)
+            if(ele.innerHTML.length == 0 && document.querySelectorAll(".hobbies .box ul li").length > 1){
+                ul.removeChild(ul.lastElementChild)
+                ul.lastElementChild.children[0].focus()
+            }
         }
     })
 }

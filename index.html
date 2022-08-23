@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/neutral.css">
+    <link rel="stylesheet" href="css/neutral.css" id="styles">
     <script type="text/javascript" src="js/sidebars.js" defer></script>
 </head>
 <body class="body">
@@ -44,7 +44,7 @@
                     <span class="career" contenteditable></span>
                 </div>
             </div>
-                <div class="contactInfo">
+                <div class="contactInfo" draggable="true">
                     <h3 class="title">Contact Info</h3>
                     <ul>
                         <li id="forcontact">
@@ -92,7 +92,7 @@
                     </ul>
                 </div>
 
-                <div class="contactInfo education" onmouseenter="showButton()" onmouseleave="showButton()">
+                <div class="contactInfo education" onmouseenter="showButton()" onmouseleave="showButton()" draggable="true">
                     <h3 class="title">Education</h3>
                     <ul>
                         <li>
@@ -107,7 +107,7 @@
                                     <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
                                 </span>
                                 <div class="forpresentcheckbox hide">
-                                    <input type="checkbox" name="isPresent" id="isPresent" onclick="isCheck(this)">Present
+                                    <input type="checkbox" name="isPresent" id="isPresent" onclick="isCheck(this)"><label for="isPresent">Present</label>
                                 </div>   
                             </div>
                             <span class="course" contenteditable="true"></span>
@@ -122,7 +122,7 @@
                     </div>
                 </div>
 
-                <div class="contactInfo language">
+                <div class="contactInfo language" draggable="true">
                     <h3 class="title">Language</h3>
                     <ul>
                         <li>
@@ -132,15 +132,15 @@
                 </div>
         </div>
         <div class="right_side">
-            <div class="about">
+            <div class="about profile">
                 <h2 class="title2">Profile</h2>
                 <textarea class="about_yourself" rows="1" onfocus="adjustHeight(this)" onfocusout="checkInputLength(this)"></textarea>
             </div>
-            <div class="about work" onmouseenter="showWorkButton()" onmouseleave="showWorkButton()">
+            <div class="about work" onmouseenter="showWorkButton()" onmouseleave="showWorkButton()" draggable="true">
                 <h2 class="title2">Work Experience</h2>
                 <div class="workBox box">
                     <div class="year_company">
-                        <div class="duration" >
+                        <div class="workDuration" >
                             <input type="text" class="date" maxlength="2" placeholder="mm" oninput="restrictNumber(this)"/>
                             <span>/ </span>
                             <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
@@ -151,7 +151,7 @@
                                 <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
                             </span>
                             <div class="forpresentcheckbox hide">
-                                <input type="checkbox" name="isPresent" id="isPresent" onclick="isCheck(this)">Present
+                                <input type="checkbox" name="isWorkPresent" id="isWorkPresent" onclick="isCheck(this)"><label for="isWorkPresent">Present</label>
                             </div>   
                         </div>
                         <div class="company">
@@ -174,7 +174,7 @@
                     <button class="add_work_button" onclick="addWork()">+</button>
                 </div>
             </div>
-            <div class="about skills">
+            <div class="about skills" draggable="true">
                 <h2 class="title2">Skills</h2>
                 <div class="box">
                     <ul>
@@ -184,7 +184,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="about hobbies">
+            <div class="about hobbies" draggable="true">
                 <h2 class="title2">Hobby</h2>
                 <div class="box">
                     <ul>
@@ -204,5 +204,6 @@
     <script type="text/javascript" src="js/work.js"></script>
     <script type="text/javascript" src="js/otherInputs.js"></script>
     <script type="text/javascript" src="js/socials.js"></script>
+    <script type="text/javascript" src="js/dragDrop.js"></script>
 </body>
 </html>
