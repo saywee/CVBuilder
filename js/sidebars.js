@@ -1,23 +1,25 @@
-let sidebar = document.querySelector(".sidebar")
-let sidebar2 = document.querySelector(".sidebar2")
-let sidebar3 = document.querySelector(".sidebar3")
-let body = document.querySelector("body")
+let layout_btn = document.querySelector(".layout_btn")
+let social_btn = document.querySelector(".social_btn")
+let section_btn = document.querySelector(".section_btn")
+console.log(layout_btn)
 
-function showSocials(){
-    sidebar2.classList.toggle("active")
-    sidebar.classList.toggle("active")
-}
+layout_btn.addEventListener("click", () => {
+    let layouts = document.querySelector(".layouts")
+    layouts.classList.toggle("hide")
+    document.querySelector(`.${layout_btn.classList.value} .icon`).classList.toggle("rotate")
+})
 
-function moveBack(){
-    if(sidebar2.classList.contains("active")){
-        sidebar2.classList.toggle("active")
-        sidebar.classList.toggle("active")
-    }else{
-        sidebar3.classList.toggle("active")
-        sidebar.classList.toggle("active")
-    }
-}
+social_btn.addEventListener("click", () => {
+    let socials = document.querySelector(".socials")
+    socials.classList.toggle("hide")
+    document.querySelector(`.${social_btn.classList.value} .icon`).classList.toggle("rotate")
+})
 
+section_btn.addEventListener("click", () => {
+    let sections = document.querySelector(".sections")
+    sections.classList.toggle("hide")
+    document.querySelector(`.${section_btn.classList.value} .icon`).classList.toggle("rotate")
+})
 
 function showAndHide(element){
     element.parentElement.classList.toggle("active")
@@ -28,8 +30,3 @@ let btn = document.querySelector(".print")
 btn.onclick = () => {
     window.print();
 }
-
-// let github = document.getElementById("forgithub")
-// // github.classList.add("hide")
-// github.parentElement.classList.add("hide")
-// console.log(github.parentElement.classList)

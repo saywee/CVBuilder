@@ -18,6 +18,7 @@ function addTextArea(ele){
     let currentBoxClass = currentBox.classList[0]
     ele.addEventListener("keydown", (e) => {
         let ul = document.querySelector(`.${currentBoxClass} .text ul`)
+        console.log(e.key)
         if(e.key == "Enter"){
             e.preventDefault()
             let li = document.createElement("li")
@@ -28,7 +29,6 @@ function addTextArea(ele){
             if(ele.value.length === 0 && document.querySelectorAll(`.${currentBoxClass} .text ul li`).length > 1) {
                 ul.removeChild(ul.lastElementChild)
                 ul.lastElementChild.children[0].focus()
-
             }
         }
     })
@@ -63,9 +63,7 @@ function addWork(){
         </div>
         <div class="company">
             <span contenteditable="true"></span>
-        </div>
-        <div class="country">
-            <span contenteditable="true"></span>
+            <span contenteditable="true" class="country"></span>
         </div>
     </div>
     <div class="text">

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/beginner.css">
+    <title class="page">pageTwo</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="toggle-btn" onclick="showAndHide(this)"><i class="fa-solid fa-bars"></i></div>
+        <ul>
+            <li class="layout_btn"> Layout
+                <span class="icon"><i class="fa-solid fa-caret-down"></i></span>
+            </li>
+            <ul class="layouts hide">
+                <li><a href="index.html">page 1</a></li>
+                <li class="section_btn">Sections
+                    <span class="icon"><i class="fa-solid fa-caret-down"></i></span>
+                </li>
+                <ul class="sections hide">
+                    <li><input type="checkbox" name="worksection" id="worksection" checked="true" onclick="toggleSection(this)"><label for="worksection">Work Experience</label></li>
+                    <li><input type="checkbox" name="educationsection" id="educationsection" checked="true" onclick="toggleSection(this)"><label for="educationsection">Education</label></li>
+                    <li><input type="checkbox" name="projectsection" id="projectsection" checked="true" onclick="toggleSection(this)"><label for="projectsection">Project</label></li>
+                    <li><input type="checkbox" name="languagesection" id="languagesection" checked="true" onclick="toggleSection(this)"><label for="languagesection">Language</label></li>
+                    <li><input type="checkbox" name="skillsection" id="skillsection" checked="true" onclick="toggleSection(this)"><label for="skillsection">Skill</label></li>
+                    <li><input type="checkbox" name="hobbysection" id="hobbysection" checked="true" onclick="toggleSection(this)"><label for="hobbysection">Hobby</label></li>
+                </ul>
+            </ul>
+            <li class="social_btn">Social Media
+                <span class="icon"><i class="fa-solid fa-caret-down"></i></span>
+            </li>
+            <ul class="socials hide">
+                <li><input type="checkbox" name="phone" id="contact" onclick="toggle(this)" checked="true"><label for="contact">Contact No.</label></li>
+                <li><input type="checkbox" name="email" id="email" onclick="toggle(this)" checked="true"><label for="email">Email</label></li>
+                <li><input type="checkbox" name="address" id="address" onclick="toggle(this)" checked="true"><label for="address">Address</label></li>
+                <li><input type="checkbox" name="linkedin" id="linkedin" onclick="toggle(this)"><label for="linkedin">Linkedin</label></li>
+                <li><input type="checkbox" name="github" id="github" onclick="toggle(this)"><label for="github">Github</label></li>
+                <li><input type="checkbox" name="instagram" id="instagram" onclick="toggle(this)"><label for="instagram">Instagram</label></li>
+                <li><input type="checkbox" name="facebook" id="facebook" onclick="toggle(this)"><label for="facebook">Facebook</label></li>
+            </ul>
+            <li><button class="print">Print</button></li>
+            <li>Contact</li>
+            
+        </ul>
+    </div>
+    <div class="container">
+        <div class="profileText">
+            <div class="profile">
+                <span class="name" contenteditable></span>
+                <span class="career" contenteditable></span>
+                <div class="yourself">
+                    <textarea class="about_yourself" rows="3" onfocus="adjustHeight(this)" onfocusout="checkInputLength(this)"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="grid_container">
+            <div class="contactInfo contact">
+                <ul>
+                    <li id="forcontact">
+                        <div class="contacts">
+                            <span class="icon"><i class="fa-solid fa-mobile-screen"></i></span>
+                            <span class="contact" contenteditable="true"></span>
+                        </div>
+                    </li>
+                    <li id="foremail">
+                        <div class="contacts">
+                            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                            <span class="email" contenteditable="true"></span>
+                        </div>
+                    </li>
+                    <li id="foraddress" >
+                        <div class="contacts">
+                            <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                            <span class="address" contenteditable="true"></span>
+                        </div>
+                    </li>
+                    <li id="forlinkedin" class="hide">
+                        <div class="contacts">
+                            <span class="icon"><i class="fa-brands fa-linkedin"></i></span>
+                            <span class="linkedin" contenteditable="true"></span>
+                        </div>
+                    </li>
+                    <li id="forgithub" class="hide"> 
+                        <div class="contacts">
+                            <span class="icon"><i class="fa-brands fa-github"></i></span>
+                            <span class="github" contenteditable="true"></span>
+                        </div>
+                    </li>
+                    <li id="forinstagram" class="hide">
+                        <div class="contacts">
+                            <span class="icon"><i class="fa-brands fa-instagram"></i></span>
+                            <span class="instagram" contenteditable="true"></span>
+                        </div>
+                    </li>
+                    <li id="forfacebook" class="hide">
+                        <div class="contacts">
+                            <span class="icon"><i class="fa-brands fa-facebook"></i></span>
+                            <span class="facebook" contenteditable="true"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="left_side">
+
+                <div class="contactInfo education" id="foreducationsection" onmouseenter="showButton()" onmouseleave="showButton()" draggable="true">
+                    <h3 class="title">Education</h3>
+                    <ul>
+                        <li>
+                            <div class="duration" onmouseenter="showPresentCheckBox(this)" onmouseleave="showPresentCheckBox(this)">
+                                <input type="text" class="date" maxlength="2" placeholder="mm" oninput="restrictNumber(this)"/>
+                                <span>/ </span>
+                                <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
+                                <span>- </span>
+                                <span class="present">
+                                    <input type="text" class="date" maxlength="2" placeholder="mm" oninput="restrictNumber(this)"/>
+                                    <span>/ </span>
+                                    <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
+                                </span>
+                                <div class="forpresentcheckbox hide">
+                                    <input type="checkbox" name="isPresent" id="isPresent" onclick="isCheck(this)"><label for="isPresent">Present</label>
+                                </div>   
+                            </div>
+                            <span class="course" contenteditable="true"></span>
+                            <br>
+                            <div class="location">
+                                <span class="university" contenteditable="true"></span>
+                                <span class="country" contenteditable="true"></span>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                    <div class="add_education_button hide">
+                        <button class="add_education" onclick="addEducation()">+</button>
+                    </div>
+                </div>
+                <div class="contactInfo projects" id="forprojectsection" onmouseenter="showProjectButton()" onmouseleave="showProjectButton()" draggable="true">
+                    <h3 class="title">Projects</h3>
+                    <ul>
+                        <li>
+                            <div class="projectDuration" onmouseenter="showProjectCheckBox(this)" onmouseleave="showProjectCheckBox(this)">
+                                <input type="text" class="date" maxlength="2" placeholder="mm" oninput="restrictNumber(this)"/>
+                                <span>/ </span>
+                                <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
+                                <span>- </span>
+                                <span class="present">
+                                    <input type="text" class="date" maxlength="2" placeholder="mm" oninput="restrictNumber(this)"/>
+                                    <span>/ </span>
+                                    <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
+                                </span>
+                                <div class="forpresentcheckbox hide">
+                                    <input type="checkbox" name="isProjectPresent" id="isProjectPresent" onclick="isCheck(this)"><label for="isProjectPresent">Present</label>
+                                </div>   
+                            </div>
+                            <div class="project_name">
+                                <span contenteditable="true" onfocusout="toggleFill(this)"></span>
+                            </div>
+                            <div class="text">
+                                <ul>
+                                    <li>
+                                        <textarea rows="1" onfocus="addText(this)" onfocusout="checkInputLength(this)"></textarea>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="add_project hide">
+                        <button class="add_project_button" onclick="addProject()">+</button>
+                    </div>
+                </div>
+
+                <div class="contactInfo language" id="forlanguagesection" draggable="true">
+                    <h3 class="title">Language</h3>
+                    <ul>
+                        <li>
+                            <span contenteditable="true" class="language" onfocus="addLanguage(this)" onfocusout="toggleFill(this)"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right_side">
+                <div class="about work" id="forworksection" onmouseenter="showWorkButton()" onmouseleave="showWorkButton()" draggable="true">
+                    <h2 class="title2">Work Experience</h2>
+                    <div class="workBox box">
+                        <div class="year_company">
+                            <div class="workDuration" >
+                                <input type="text" class="date" maxlength="2" placeholder="mm" oninput="restrictNumber(this)"/>
+                                <span>/ </span>
+                                <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
+                                <span>- </span>
+                                <span class="present">
+                                    <input type="text" class="date" maxlength="2" placeholder="mm" oninput="restrictNumber(this)"/>
+                                    <span>/ </span>
+                                    <input type="text" class="year" maxlength="4" placeholder="yyyy" oninput="restrictNumber(this)"/>
+                                </span>
+                                <div class="forpresentcheckbox hide">
+                                    <input type="checkbox" name="isWorkPresent" id="isWorkPresent" onclick="isCheck(this)"><label for="isWorkPresent">Present</label>
+                                </div>   
+                            </div>
+                            <div class="company">
+                                <span contenteditable="true"></span>
+                                <span contenteditable="true" class="country"></span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h4>Role</h4>
+                            <ul>
+                                <li>
+                                    <textarea rows="1" onfocus="addTextArea(this)" onfocusout="checkInputLength(this)"></textarea>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="add_work hide">
+                        <button class="add_work_button" onclick="addWork()">+</button>
+                    </div>
+                </div>
+                <div class="about skills" id="forskillsection" draggable="true">
+                    <h2 class="title2">Skills</h2>
+                    <div class="box">
+                        <ul>
+                            <li>
+                                <span class="skill" contenteditable="true" onfocus="addSkill(this)"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about hobbies" id="forhobbysection" draggable="true">
+                    <h2 class="title2">Hobby</h2>
+                    <div class="box">
+                        <ul>
+                            <li>
+                                <span class="hobby" contenteditable="true" onfocus="addHobby(this)" onfocusout="toggleFill(this)"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="help">
+        <button id="help_button">Help</button>
+    </div>
+
+    <!-- javascripts -->
+    <script type="text/javascript" src="js/education.js"></script>
+    <script type="text/javascript" src="js/work.js"></script>
+    <script type="text/javascript" src="js/otherInputs.js"></script>
+    <script type="text/javascript" src="js/socials.js"></script>
+    <script type="text/javascript" src="js/dragDrop.js"></script>
+    <script type="text/javascript" src="js/sidebars.js"></script>
+    <script type="text/javascript" src="js/project.js"></script>
+
+</body>
+</html>

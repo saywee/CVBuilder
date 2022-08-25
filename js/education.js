@@ -1,7 +1,5 @@
 let dates = document.querySelectorAll(".contactInfo.education .date")
-console.log(dates)
-function restrictNumber (ele) {  
-    console.log(ele.value)
+function restrictNumber (ele) {
     var newValue = ele.value.replace(new RegExp(/[^\d]/,'ig'), "");
     ele.value = newValue;
 
@@ -31,6 +29,7 @@ function showPresentCheckBox(ele){
 function isCheck(element){
     let grandparent = element.parentElement.parentElement.classList.value
     let spanPresent = document.querySelector(`.${grandparent} .present`)
+    spanPresent.classList.add("present")
     if(element.checked){ 
         spanPresent.innerHTML = 'Present'
     }else{
@@ -67,15 +66,13 @@ function addEducation(){
     </div>
     <span class="course" contenteditable="true"></span>
     <br>
+    <div class="location">
     <span class="university" contenteditable="true"></span>
-    <br>
     <span class="country" contenteditable="true"></span>
+    </div>
     `
 
     ul.insertAdjacentElement('beforeend', li)
 }
 
-addButton.addEventListener("click", () => {
-    console.log("clicked")
-})
 

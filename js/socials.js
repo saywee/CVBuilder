@@ -6,3 +6,9 @@ function toggle(selectedCheckBox){
         social.classList.toggle("hide")
     }
 }
+
+function toggleSection(selectedSection) {
+    let section = document.querySelector(`#for${selectedSection.id}`)
+    console.log(section)
+    section.classList.toggle("hide")
+}

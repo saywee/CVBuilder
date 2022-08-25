@@ -4,11 +4,13 @@ let rightContainer = document.querySelector(".right_side")
 let allLeftSection = document.querySelectorAll(".contactInfo")
 let allRightSection = document.querySelectorAll(".about")
 let allSections = [...allLeftSection, ...allRightSection]
-console.log(allSections)
+
+let page = document.querySelector(".page")
 
 allSections.forEach(section => {
-    section.addEventListener("dragstart", () => {
+    section.addEventListener("dragstart", (e) => {
         section.classList.add("drag")
+        e.dataTransfer.setDragImage(section, 0 ,0)
     })
 
     section.addEventListener("dragend", () => {
@@ -18,9 +20,16 @@ allSections.forEach(section => {
 
 leftContainer.addEventListener("dragover", e => {
     const drag = document.querySelector(".drag")
-    console.log(drag.classList.contains("work"))
+    console.log(!drag.classList.contains("work")|| !drag.classList.contains("projects"))
     const afterElement = getDragAfterElement(leftContainer, e.clientY)
-    if(!drag.classList.contains("work")){
+    if(!drag.classList.contains("work") && !drag.classList.contains("projects") && page.innerHTML !== "pageTwo"){
+        e.preventDefault()
+        if (afterElement == null) {
+            leftContainer.appendChild(drag)
+        } else {
+            leftContainer.insertBefore(drag, afterElement)
+        }
+    }else if(page.innerHTML === "pageTwo"){
         e.preventDefault()
         if (afterElement == null) {
             leftContainer.appendChild(drag)
@@ -55,3 +64,4 @@ function getDragAfterElement(container, y) {
         }
     }, {offset: Number.NEGATIVE_INFINITY}).element
 }
+

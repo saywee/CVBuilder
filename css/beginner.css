@@ -5,51 +5,55 @@
     outline: none;
 }
 
-.container{
+.container {
     position: relative;
     width: 100%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     max-width: 800px;
     min-height: 900px;
-    margin: 20px;
+    max-height: 1000px;
     background: #fff;
-    display: grid;
-    grid-template-columns: 1.2fr 2fr;
+    padding: 10px;
 }
 
-.container .left_side{
+.left_side{
     position: relative;
-    background-color:#003147;
-    padding: 20px;
+    padding: 10px;
 }
 
-.profileText {
-    margin-bottom: 10px;
+.grid_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .profileText .profile{
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(255, 2555, 255, 0.2);   
+    align-items: start;
 }
 
 .profileText span {
     border-style: hidden;
-    background-color: transparent;
-    color: #fff;
+    color: #000;
     font-size: 1.3em;
-    margin-top: 10px;
+    margin: 0.2em;
     text-transform: uppercase;
     text-align: center;
     font-weight: 600;
     line-height: 1.2em;
 }
 
+.profileText textarea {
+    margin-top: 0.2em;
+}
+
 .profileText .career {
     font-size: 0.8em;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 span[contenteditable] {
@@ -64,56 +68,69 @@ span[contenteditable].career:empty::before{
     content: 'Career';
 }
 
-.right_side .contactInfo {
-    padding-top: 0;
+.profileText .yourself {
+    width: 100%;
+}
+textarea{
+    min-width: 100%;
+    border: #333 dashed;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    resize: none;
 }
 
-.contactInfo {
-    margin-bottom: 10px;
+.profile {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0);   
 }
 
-.title {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-}
-.right_side .title {
-    color: #003147;
+.title, .title2 {
+    color: #000;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.4em;
     padding-top: 10px;
     margin-bottom: 10px;
 }
 
-.contactInfo ul {
+.contactInfo.contact {
+    grid-column: 1/span 2;
+    border-bottom: 1px solid rgba(0, 0, 0);
+    padding: 10px;
+}
+
+.contactInfo.contact ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.contactInfo.contact ul li{
     position: relative;
+    list-style: none;
+    margin: 10px;
 }
 
 .contactInfo ul li {
     position: relative;
     list-style: none;
-    margin: 10px 0;
 }
 
 .contactInfo ul li .contacts {
     display: flex;
+
 }
 
 .contactInfo ul li .icon {
     display: inline-block;
     width: 30px;
     font-size: 18px;
-    color: #03a9f4;
     
 }
 .contactInfo ul li span {
-    color: #fff;
     font-weight: 300;
-    width: 210px;
+    width: 100%;
 }
 
 span[contenteditable].contact:empty::before {
@@ -148,6 +165,7 @@ span[contenteditable].facebook:empty::before {
     display: none;
 }
 
+
 .contactInfo ul li input {
     border-style: hidden;
     background-color: transparent;
@@ -158,25 +176,21 @@ span[contenteditable].facebook:empty::before {
 }
 
 .contactInfo.education input.date {
-    color: #03a9f4;
+    color: #000;
     font-weight: 500;
     width: 25px;
     font-size: 14px;
 }
 
-.contactInfo.education input.date:not(:empty) {
-    width: 20px;
-}
-
 .contactInfo.education input.year {
-    color: #03a9f4;
+    color: #000;
     font-weight: 500;
     width: 30px;
     font-size: 14px;
 }
 
 .contactInfo.education ul li span {
-    color: #03a9f4;
+    color: #000;
     font-weight: 500;
     left: 30px;
 }
@@ -188,12 +202,6 @@ span[contenteditable].facebook:empty::before {
 }
 
 .contactInfo.education span.course {
-    color: #fff;
-    font-weight: 600;
-    font-size: 1.15em;
-}
-
-.right_side .contactInfo.education span.course {
     color: #000;
     font-weight: 600;
     font-size: 1.15em;
@@ -204,11 +212,6 @@ span[contenteditable].facebook:empty::before {
 }
 
 .contactInfo.education span.university {
-    color: #fff;
-    font-weight: 300;
-}
-
-.right_side .contactInfo.education span.university {
     color: #000;
     font-weight: 300;
 }
@@ -217,179 +220,50 @@ span[contenteditable].facebook:empty::before {
     content: "University";
 }
 
+.location {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.location:not(span.university) {
+    justify-content: end;
+    align-items: end;
+}
+
 .contactInfo.education span.country {
-    color: #03a9f4;
+    color: #000;
     font-weight: 500;
     font-size: 14px;
+    justify-content: end;
+
 }
 
 .contactInfo.education span.country:empty::before {
     content: "Country";
 }
 
-.contactInfo.language ul{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.contactInfo.language span {
-    display: inline-block;
-    border-bottom-style: dashed;
-    color: #fff;
-    font-weight: 400;
-    font-size: 1.05em;
-    width: 100px;
-}
-
-.right_side .contactInfo.language span {
-    display: inline-block;
-    border-bottom-style: dashed;
+.projects input.date {
     color: #000;
-    font-weight: 400;
-    font-size: 1.05em;
-    width: 100px;
+    font-weight: 500;
+    width: 25px;
+    font-size: 14px;
 }
 
-.contactInfo.language span.filled {
-    border-bottom-style: none;
-}
-
-.contactInfo.language span:empty::before {
-    content: "Language";
-}
-
-.container .right_side{
-    position: relative;
-    background-color: #fff;
-    padding: 20px;
-}
-
-.right_side ul li {
-    position: relative;
-}
-
-.about {
-    margin-bottom: 20px;
-}
-
-textarea{
-    width: 100%;
-    border: #333 dashed;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;
-    resize: none;
-}
-
-.filled {
-    border-bottom-style: none;
-}
-
-textarea::-webkit-scrollbar {
-    display: none;
-}
-
-.about:last-child {
-    margin-bottom: 0;
-}
-
-.title2 {
-    color: #003147;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    font-size: 1.4em;
-    margin-bottom: 10px;
-}
-
-.left_side .title2 {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-}
-
-p {
-    color: #333;
-}
-
-.about .box {
-    display: flex;
-    flex-direction: row;
-    margin: 20px 0;
-}
-
-.about .workBox {
-    display: flex;
-    flex-direction: row;
-    margin: 20px 0;
-}
-
-
-.about .year_company {
-    max-width: 150px;
-}
-
-.about input.date {
-    font-weight: 600;
-    width: 20px;
-    font-size: 12px;
-    border-style: none;
-}
-.about input.year {
-    font-weight: 600;
+.projects input.year {
+    color: #000;
+    font-weight: 500;
     width: 30px;
-    font-size: 12px;
-    border-style: none;
+    font-size: 14px;
 }
 
-.about .year_company .company {
-    display: flex;
-    flex-direction: column;
-}
-
-.about .year_company .company span{
-    font-weight: 600;
-}
-
-.about .year_company .company span:empty::before{
-    content: "Company";
-}
-
-.about .year_company span.country {
-    color: #848c90;
-    font-weight: 600;
-    font-size: 0.9em;
-}
-
-.about .year_company span.country:empty::before{
-    content: "Country"
-}
-
-.about .text h4 {
-    color: #2a7da2;
-    font-size: 16px;
-}
-
-.about .text ul {
-    padding-left: 20px;
-}
-
-.about .text ul li{
-    padding-left: 5px;
+.projects ul li div{
     padding-bottom: 5px;
-    list-style-type: '-';
 }
 
-.about .text ul li textarea {
-    vertical-align: top;
-    width: 220px;
-}
-
-.projects ul li {
-    list-style: none;
-    padding-bottom: 10px;
+.projects ul li span {
+    color: #000;
+    font-weight: 500;
+    left: 30px;
 }
 
 .projects ul li .forpresentcheckbox {
@@ -415,6 +289,109 @@ p {
     content: "Project Name";
 }
 
+.projects .text ul li {
+    padding-left: 5px;
+    padding-bottom: 5px;
+    list-style: "-";
+}
+
+.contactInfo.language ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: start;
+    place-items: start;
+}
+
+.contactInfo.language span {
+    display: inline-block;
+    border-bottom-style: dashed;
+    color: #000;
+    font-weight: 400;
+    font-size: 1.05em;
+    width: 100px;
+}
+
+.contactInfo.language span.filled {
+    border-bottom-style: none;
+}
+
+.contactInfo.language span:empty::before {
+    content: "Language";
+}
+
+.container .right_side{
+    position: relative;
+    padding: 10px;
+}
+
+.filled {
+    border-bottom-style: none;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.about .box {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.about .year_company input.date {
+    font-weight: 600;
+    width: 20px;
+    font-size: 12px;
+    border-style: none;
+}
+.about .year_company input.year {
+    font-weight: 600;
+    width: 30px;
+    font-size: 12px;
+    border-style: none;
+}
+
+.about .year_company .company {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.about .year_company .company span{
+    font-weight: 600;
+}
+
+.about .year_company .company span:empty::before{
+    content: "Company";
+}
+
+.about .year_company span.country {
+    color: #848c90;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.about .year_company span.country:empty::before{
+    content: "Country"
+}
+
+.about .text h4 {
+    font-size: 16px;
+}
+
+.about .text ul {
+    padding-left: 20px;
+}
+
+.about .text ul li{
+    padding-left: 5px;
+    padding-bottom: 5px;
+    list-style-type: '-';
+}
+
+.about .text ul li textarea {
+    vertical-align: top;
+    width: 220px;
+}
 
 .skills .box ul{
     display: flex;
@@ -436,18 +413,6 @@ p {
     margin-bottom: 10px;
 }
 
-.left_side .skills .box span{
-    display: block;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 13px;
-    color: #fff;
-    border-bottom-style: dashed;
-    width: fit-content;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
 .skills .box span:empty::before {
     content: "Skill";
 }
@@ -462,15 +427,6 @@ p {
 
 .hobbies .hobby{
     display: block;
-    font-size: 15px;
-    font-weight: 500;
-    border-bottom-style: dashed;
-    width: fit-content;
-}
-
-.left_side .hobbies .hobby{
-    display: block;
-    color: #fff;
     font-size: 15px;
     font-weight: 500;
     border-bottom-style: dashed;
@@ -510,13 +466,13 @@ button:not(.sidebar .print){
 .present {
     font-size: 0.8em;
 }
+
 @media print {
     button {
         display: none;
     }
 
     .container .left_side{
-        background-color: #003147 !important; 
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
     }
@@ -525,4 +481,3 @@ button:not(.sidebar .print){
         display: none;
     }
 }
- 

@@ -1,8 +1,8 @@
 let languageInputs = document.querySelector(".contactInfo.language span")
 let skillInputs = document.querySelector(".skills .box span")
 let hobbyInputs = document.querySelector(".hobbies .hobby")
-
 let skillTexts = document.querySelectorAll(".skill")
+
 skillTexts.forEach(skill => {
     skill.addEventListener("focusout", () => {
         if(skill.innerHTML.trim().length > 0) {
@@ -51,7 +51,6 @@ function addLanguage(ele){
 function addSkill(ele){
     let li = document.createElement("li")
     let ul = document.querySelector(".skills .box ul")
-    console.log(ul)
     ele.addEventListener("keydown", e => {
         if(e.key === "Enter"){
             e.preventDefault()
