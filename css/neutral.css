@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     outline: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container{
@@ -23,7 +24,7 @@
 }
 
 .profileText {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .profileText .profile{
@@ -69,7 +70,7 @@ span[contenteditable].career:empty::before{
 }
 
 .contactInfo {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .title {
@@ -77,7 +78,7 @@ span[contenteditable].career:empty::before{
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .right_side .title {
     color: #003147;
@@ -321,9 +322,10 @@ p {
 }
 
 .about .workBox {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: 20px 0;
+    place-items: start;
 }
 
 
