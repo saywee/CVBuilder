@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="page">Index</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/neutral.css" id="styles">
     <script type="text/javascript" src="js/sidebars.js" defer></script>
@@ -133,14 +134,17 @@
                     </ul>
                     <div class="add_education_button hide">
                         <button class="add_education" onclick="addEducation()">+</button>
+                        <button class="delete_education delete" onclick="deleteEducation()">-</button>
                     </div>
                 </div>
 
                 <div class="contactInfo language" id="forlanguagesection" draggable="true">
                     <h3 class="title">Language</h3>
                     <ul>
-                        <li>
+                        <li class="">
                             <span contenteditable="true" class="language" onfocus="addLanguage(this)" onfocusout="toggleFill(this)"></span>
+                            <button class="proficiency" >Full Professional Proficiency</button>
+                            
                         </li>
                     </ul>
                 </div>
@@ -184,6 +188,7 @@
                 </div>
                 <div class="add_work hide">
                     <button class="add_work_button" onclick="addWork()">+</button>
+                    <button class="delete_work delete" onclick="deleteWork()">-</button>
                 </div>
             </div>
             <div class="about projects" id="forprojectsection" onmouseenter="showProjectButton()" onmouseleave="showProjectButton()" draggable="true">
@@ -205,7 +210,7 @@
                             </div>   
                         </div>
                         <div class="project_name">
-                            <span contenteditable="true"></span>
+                            <span contenteditable="true" onfocusout="toggleFill(this)"></span>
                         </div>
                         <div class="text">
                             <ul>
@@ -218,6 +223,7 @@
                 </ul>
                 <div class="add_project hide">
                     <button class="add_project_button" onclick="addProject()">+</button>
+                    <button class="delete_project delete" onclick="deleteProject()">-</button>
                 </div>
             </div>
 

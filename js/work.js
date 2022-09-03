@@ -77,9 +77,42 @@ function addWork(){
 
 workDiv.insertAdjacentElement("beforebegin", div)
 totalBoxes = document.querySelectorAll(".workBox")
-// listenTextAreas()
+}
+
+function deleteWork(){
+    let workBoxes = document.querySelectorAll(".about.work .box")
+    let workSection = document.querySelector(".about.work")
+
+    if(workBoxes.length > 1){
+        workSection.removeChild(workBoxes[workBoxes.length - 1])
+    }
 }
 
 // listenTextAreas()
 
+// function something(arr){
+//     arr.forEach(element => {
+//         if(typeof element !== "number"){
+//             arr.splice(arr.indexOf(element), 1)
+//         }
+//     });
 
+//     arr.forEach(ele => {
+//         console.log(typeof ele)
+//     })
+// }
+
+// let arrays = [1, 'a', 'b', 2]
+// something(arrays)
+
+
+var arr = [7, 'c1', 'd2', 18, 'dr', 21, 2];
+var numbers = arr.filter(numbersOnly);
+
+console.log(numbers);
+
+    function numbersOnly(value) {
+        if (typeof (value) === 'number') {
+            return value;
+        }
+    }

@@ -36,9 +36,13 @@ function addLanguage(ele){
         let ul = document.querySelector(`.language ul`)
         if(e.key === "Enter"){
             e.preventDefault()
-            li.innerHTML = `<span contenteditable="true" class="language" onfocus="addLanguage(this)" onfocusout="toggleFill(this)"></span>`
+            li.innerHTML = `<span contenteditable="true" class="language" onfocus="addLanguage(this)" onfocusout="toggleFill(this)"></span>
+            <button class="proficiency" >Full Professional Proficiency</button>
+            <div class="proficiency_choices hide">
+                                
+                            </div>`
             ul.insertAdjacentElement("beforeend", li)
-            ul.lastElementChild.lastChild.focus()
+            ul.lastElementChild.children[0].focus()
         }else if(e.key === "Backspace"){
             if(ele.innerHTML.length === 0 && document.querySelectorAll(".language ul li").length > 1) {
                 ul.removeChild(ul.lastElementChild)
@@ -46,6 +50,55 @@ function addLanguage(ele){
             }
         }
     })
+    changeProficiency()
+}
+
+
+function changeProficiency(){
+    let allProficiencies = document.querySelectorAll(".proficiency")
+    allProficiencies.forEach(proficiency => {
+        proficiency.addEventListener("click", ()=>{
+            let parent = proficiency.parentElement
+            let div = document.createElement("div")
+            div.classList.add("proficiency_choices")
+            div.innerHTML = `<button class="prof_choice" onclick="selectedProficiency(this)">1/5</button>
+        <button class="prof_choice" onclick="selectedProficiency(this)">2/5</button>
+        <button class="prof_choice" onclick="selectedProficiency(this)">3/5</button>
+        <button class="prof_choice" onclick="selectedProficiency(this)">4/5</button>
+        <button class="prof_choice" onclick="selectedProficiency(this)">5/5</button>`
+        
+            proficiency.replaceWith(div)
+        })
+    })
+}
+
+changeProficiency()
+
+function selectedProficiency(ele){
+    let prof_button = document.createElement("button")
+    prof_button.classList.add("proficiency")
+    let li = ele.closest("li")
+    switch(ele.innerHTML){
+        case "1/5":
+            prof_button.innerHTML = "Elimentary Proficiency"
+            break;
+        case "2/5":
+            prof_button.innerHTML = "Limited Working Proficiency"
+            break;
+        case "3/5":
+            prof_button.innerHTML = "Professional Working Proficiency"
+            break;
+        case "4/5":
+            prof_button.innerHTML = "Full Professional Proficiency"
+            break;
+        case "5/5":
+            prof_button.innerHTML = "Native/Bilingual Proficiency"
+            break;
+    }
+    ele.parentElement.replaceWith(prof_button)
+    // li.removeChild(ele.parentElement)
+    // li.insertAdjacentElement("beforeend", prof_button)
+    changeProficiency()
 }
 
 function addSkill(ele){

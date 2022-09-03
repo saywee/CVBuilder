@@ -75,4 +75,10 @@ function addEducation(){
     ul.insertAdjacentElement('beforeend', li)
 }
 
+function deleteEducation(){
+    if(ul.children.length > 1){
+        ul.removeChild(ul.lastChild)
+    }
+}
+
 

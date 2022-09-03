@@ -259,6 +259,49 @@ span[contenteditable].facebook:empty::before {
     content: "Language";
 }
 
+.contactInfo.language .proficiency {
+    font-size: 0.8em;
+    font-weight: 400;
+    font-style: italic;
+    border: none;
+    margin-top: 5px;
+    background-color: transparent;
+    color: #fff;
+    text-align: left;
+}
+
+.contactInfo.language .proficiency.hide {
+    display: none;
+}
+
+.contactInfo.language .proficiency:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contactInfo.language .proficiency_choices {
+    display: flex;
+    background-color: #012536;
+    margin-top: 5px;
+}
+
+.contactInfo.language .proficiency_choices.hide {
+    display: none;
+}
+
+.contactInfo.language .proficiency_choices .prof_choice {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    margin: 5px;
+    font-size: 1.01em;
+}
+
+.contactInfo.language .proficiency_choices .prof_choice:hover {
+    cursor: pointer;
+    color: #03a9f4;
+}
+
 .container .right_side{
     position: relative;
     background-color: #fff;
@@ -290,6 +333,10 @@ textarea::-webkit-scrollbar {
     display: none;
 }
 
+textarea::-moz-progress-bar {
+    display: none;
+}
+
 .about:last-child {
     margin-bottom: 0;
 }
@@ -316,12 +363,6 @@ p {
 }
 
 .about .box {
-    display: flex;
-    flex-direction: row;
-    margin: 20px 0;
-}
-
-.about .workBox {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 20px 0;
@@ -499,8 +540,18 @@ p {
     border-bottom-style: none;
 }
 
-button:not(.sidebar .print){
+button:not(.sidebar .print):not(.delete):not(.prof_choice):not(.proficiency){
     background-color: #03a9f4;
+    border-style: none;
+    width: 30px;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.delete {
+    background-color: bisque;
     border-style: none;
     width: 30px;
     font-weight: 600;
@@ -512,6 +563,11 @@ button:not(.sidebar .print){
 .present {
     font-size: 0.8em;
 }
+
+.drag {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 @media print {
     button {
         display: none;
